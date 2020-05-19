@@ -1,7 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 
-class App extends React.component {
+import Login from './components/Login';
+
+class App extends React.Component {
 
   constructor() {
     super();
@@ -13,7 +15,10 @@ class App extends React.component {
     return (
       <div>
         <Router>
-          
+          <Link to='/login'>Login</Link><br/>
+            <Switch>
+              <Route path='/login' component={Login} />
+            </Switch>
         </Router>
       </div>
     );
