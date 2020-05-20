@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 
 import Login from './components/Login';
+import FriendsList from './components/FriendsList';
 import PrivateRoute from './utilities/PrivateRoute';
 
 class App extends React.Component {
@@ -14,14 +15,12 @@ class App extends React.Component {
   }
   render(){
     return (
-      <div>
+      <div  className='App-header'>
         <Router>
-          <Link to='/login'>Login</Link><br/>
-          {/* <Link to='/friends-list'>Friends List</Link><br/>
-          <Link to='/add-friend'>Add Friend</Link><br/> */}
+          <Link to='/login'>Login</Link>
+          <Link to='/friends-list'>Friends List</Link>
             <Switch>
-              {/* <PrivateRoute exact path='/friends-list' component={FriendsList} />
-              <PrivateRoute exact path='/add-friend' component={AddFriend} /> */}
+              <PrivateRoute exact path='/friends-list' component={FriendsList} />
               <Route path='/login' component={Login} />
             </Switch>
         </Router>

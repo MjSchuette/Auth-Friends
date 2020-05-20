@@ -1,10 +1,12 @@
 import React from 'react';
 import {axiosWithAuth} from '../utilities/axiosWithAuth';
 
+import AddFriend from '../actions/AddFriend';
+
 class FriendsList extends React.Component {
     constructor() {
         super();
-        this,state = {
+        this.state = {
             friends: []
         }
     }
@@ -27,8 +29,9 @@ class FriendsList extends React.Component {
     render() {
         return(
             <div>
-                <h1>Friend List</h1><br/>
-                {this.state.friends.map(friends => <div><br/>{`${friend.name}, ${friend.age} years old, ${friend.email}`}</div>)}
+                <h1>Friend List</h1>
+                <AddFriend/>
+                {this.state.friends.map(friends => <div><br/>{`${friends.name}, ${friends.age} years old, ${friends.email}`}</div>)}
             </div>
         );
     }
